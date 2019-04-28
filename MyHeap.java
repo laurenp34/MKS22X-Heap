@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.*;
+
 public class MyHeap {
 
 
@@ -21,7 +24,7 @@ private static void pushDown(int[]data,int size,int index){
   //if larger of 2 nodes is larger than current node, swap and call method recursively.
   if (data[nextI] > data[index]) {
     swap(data, nextI, index);
-    
+    pushDown(data,size,nextI); // because nextI represented where you swapped to.
   }
 
 }
@@ -36,10 +39,16 @@ private static void pushUp(int[]data,int index){}
 /*We will discuss this today:
       - convert the array into a valid heap. [ should be O(n) ]
       */
-public static void heapify(int[]){}
+public static void heapify(int[] data){}
 
 
 //- sort the array by converting it into a heap then removing the largest value n-1 times. [ should be O(nlogn) ]
-public static void heapsort(int[]) {}
+public static void heapsort(int[] data) {}
+
+  public static void main(String[] args) {
+    int[] d1 = {4,5,7,3,2,6,1,1,0};
+    pushDown(d1,9,0);
+    System.out.println(Arrays.toString(d1));
+  }
 
 }
