@@ -47,7 +47,7 @@ public static void heapsort(int[] data) {}
 
   public static void main(String[] args) {
     int[] d1 = {4,5,7,3,2,6,1,1,0};
-    pushDown(d1,9,0);
+    pushDown(d1,9,2);
     System.out.println(Arrays.toString(d1));
   }
 
