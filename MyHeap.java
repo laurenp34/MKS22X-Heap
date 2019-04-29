@@ -64,7 +64,11 @@ public static void heapsort(int[] data) {}
   public static void main(String[] args) {
     int[] d1 = {10,5,7,3,2,6,1,1,0,9};
     pushUp(d1,d1.length-1);
-    System.out.println(Arrays.toString(d1));
+    System.out.println(Arrays.toString(d1)+"\n");
+
+    //int[] d2 = {4,6,9,2,4,10,0,4,7,4,11};
+    //heapify(d2);
+    //System.out.println(Arrays.toString(d2));
   }
 
 }
