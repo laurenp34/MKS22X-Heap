@@ -48,6 +48,12 @@ private static void pushUp(int[]data,int index){
       - convert the array into a valid heap. [ should be O(n) ]
       */
 public static void heapify(int[] data){
+  //base case: size 0 or 1
+  if (data.length <= 1) return;
+
+  for (int i=data.length-1;i>=0;i--) {
+    pushDown(data,data.length-1,i);
+  }
 
 }
 
