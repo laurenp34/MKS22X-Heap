@@ -33,7 +33,15 @@ private static void pushDown(int[]data,int size,int index){
 - push the element at index i up into the correct position. This will swap it with the parent node until the parent node is larger or the root is reached. [ should be O(logn) ]
 - precondition: index is between 0 and data.length-1 inclusive.
 */
-private static void pushUp(int[]data,int index){}
+private static void pushUp(int[]data,int index){
+  // if it is the root:
+  if (index==0) return;
+  int nextI = index/2;
+  if (data[nextI] < data[index]) {
+    swap(data,nextI,index);
+    pushUp(data,nextI);
+  }
+}
 
 
 /*We will discuss this today:
