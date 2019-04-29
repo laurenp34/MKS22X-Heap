@@ -36,7 +36,7 @@ private static void pushDown(int[]data,int size,int index){
 private static void pushUp(int[]data,int index){
   // if it is the root:
   if (index==0) return;
-  int nextI = index/2;
+  int nextI = (index-1)/2;
   if (data[nextI] < data[index]) {
     swap(data,nextI,index);
     pushUp(data,nextI);
@@ -47,7 +47,9 @@ private static void pushUp(int[]data,int index){
 /*We will discuss this today:
       - convert the array into a valid heap. [ should be O(n) ]
       */
-public static void heapify(int[] data){}
+public static void heapify(int[] data){
+
+}
 
 
 //- sort the array by converting it into a heap then removing the largest value n-1 times. [ should be O(nlogn) ]
