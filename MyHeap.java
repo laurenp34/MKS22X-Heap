@@ -68,11 +68,11 @@ public static void heapsort(int[] data) {
   //i represents the last element (aka the one to be swapped)
   //i also represents the size of the newly shortened heap.
   for (int i=data.length-1;i>=1;i--) {
-    System.out.println(Arrays.toString(data));
+    //System.out.println(Arrays.toString(data));
     swap(data,0,i);
-    System.out.println("sorted: "+Arrays.toString(Arrays.copyOfRange(data,i,data.length)));
+    //System.out.println("sorted: "+Arrays.toString(Arrays.copyOfRange(data,i,data.length)));
     pushDown(data,i,0);
-    System.out.println("pusheddown: "+Arrays.toString(Arrays.copyOfRange(data,0,i)));
+    //System.out.println("pusheddown: "+Arrays.toString(Arrays.copyOfRange(data,0,i)));
   }
 
 }
