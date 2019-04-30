@@ -64,7 +64,7 @@ public static void heapsort(int[] data) {
   if (data.length <= 1) return;
 
   heapify(data);
-  System.out.println(Arrays.toString(data));
+  //System.out.println(Arrays.toString(data));
   //i represents the last element (aka the one to be swapped)
   //i also represents the size of the newly shortened heap.
   for (int i=data.length-1;i>=1;i--) {
