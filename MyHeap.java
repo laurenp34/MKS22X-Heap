@@ -59,16 +59,28 @@ public static void heapify(int[] data){
 
 
 //- sort the array by converting it into a heap then removing the largest value n-1 times. [ should be O(nlogn) ]
-public static void heapsort(int[] data) {}
+public static void heapsort(int[] data) {
+  //base case: size 0 or 1 is already sorted.
+  if (data.length <= 1) return;
+
+  heapify(data);
+  //i represents the last element (aka the one to be swapped)
+  //i also represents the size of the newly shortened heap.
+  for (int i=data.length-1;i>=1;i--) {
+    swap(data,0,i);
+    pushDown(data,i,0);
+  }
+
+}
 
   public static void main(String[] args) {
     int[] d1 = {10,5,7,3,2,6,1,1,0,9};
     pushUp(d1,d1.length-1);
     System.out.println(Arrays.toString(d1)+"\n");
 
-    //int[] d2 = {4,6,9,2,4,10,0,4,7,4,11};
-    //heapify(d2);
-    //System.out.println(Arrays.toString(d2));
+    int[] d2 = {4,6,9,2,4,10,0,4,7,4,11};
+    heapsort(d2);
+    System.out.println(Arrays.toString(d2));
   }
 
 }
