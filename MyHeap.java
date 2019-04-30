@@ -18,9 +18,9 @@ public class MyHeap {
   */
 private static void pushDown(int[]data,int size,int index){
   int nextI = 2*index + 1;
-  if (nextI >= size) return; //if data[index] is already a leaf.
+  if (nextI > size) return; //if data[index] is already a leaf.
   // find larger of 2 nodes: (nextI is set to larger)
-  if (nextI+1 < size && data[nextI+1] > data[nextI]) nextI++;
+  if (nextI+1 <= size && data[nextI+1] > data[nextI]) nextI++;
   //if larger of 2 nodes is larger than current node, swap and call method recursively.
   if (data[nextI] > data[index]) {
     swap(data, nextI, index);
@@ -71,7 +71,7 @@ public static void heapsort(int[] data) {
     //System.out.println(Arrays.toString(data));
     swap(data,0,i);
     //System.out.println("sorted: "+Arrays.toString(Arrays.copyOfRange(data,i,data.length)));
-    pushDown(data,i,0);
+    pushDown(data,i-1,0);
     //System.out.println("pusheddown: "+Arrays.toString(Arrays.copyOfRange(data,0,i)));
   }
 
@@ -83,6 +83,8 @@ public static void heapsort(int[] data) {
     System.out.println(Arrays.toString(d1)+"\n");
 
     int[] d2 = {4,6,9,2,4,10,0,4,7,4,11};
+    heapify(d2);
+    System.out.println(HeapPrinter.toString(d2));
     heapsort(d2);
     System.out.println(Arrays.toString(d2));
   }
